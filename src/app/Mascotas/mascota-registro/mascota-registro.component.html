@@ -1,0 +1,39 @@
+<form [formGroup]="formularioMascota" (ngSubmit)="agregarMascota();">
+  <div>
+    <label>Nombre:</label>
+    <input type="text" formControlName="nombre" />
+    <p *ngIf="formularioMascota.touched &&  formularioMascota.get('nombre')?.errors?.['required']">El campo nombre es requerido</p>
+    <p *ngIf="formularioMascota.touched &&  formularioMascota.get('nombre')?.errors?.['pattern']">El campo nombre debe tener  almenos una letra mayuscula y minuscula</p>
+  </div>
+  <div>
+    <label>Edad:</label>
+    <input type="text" formControlName="edad"/>
+    <p *ngIf="formularioMascota.touched && formularioMascota.get('edad')?.errors?.['required']">El campo edad es requerido</p>
+    <p *ngIf="formularioMascota.get('edad')?.errors?.['pattern']">El campo edad debe ser tipo numerico</p>
+  </div>
+  <div>
+    <label>Raza:</label>
+    <input type="text" formControlName="raza"/>
+    <p *ngIf="formularioMascota.touched &&  formularioMascota.get('raza')?.errors?.['pattern']">El campo raza debe tener almenos una letra mayuscula y minuscula</p>
+    <p *ngIf=" formularioMascota.touched && formularioMascota.get('raza')?.errors?.['required']">El campo raza es requerido</p>
+
+  </div>
+  <div>
+    <label>Numero de Contacto:</label>
+    <input type="text" formControlName="contacto"/>
+    <p *ngIf=" formularioMascota.touched && formularioMascota.get('contacto')?.errors?.['required']">El campo numero de contacto es requerido</p>
+    <p *ngIf="formularioMascota.get('contacto')?.errors?.['pattern']">El campo numero de contacto debe ser tipo numerico</p>
+    <p *ngIf="formularioMascota.get('contacto')?.errors?.['minlength'] || formularioMascota.get('contacto')?.errors?.['maxlength']">El formato de numero de contacto debe tener 8 numeros</p>
+
+
+  </div>
+  <div>
+    <label>Nombre del dueño:</label>
+    <input type="text" formControlName="dueño"/>
+    <p *ngIf="formularioMascota.touched && formularioMascota.get('dueño')?.errors?.['required']">El campo nombre del dueño es requerido</p>
+    <p *ngIf="formularioMascota.touched &&  formularioMascota.get('dueño')?.errors?.['pattern']">El campo nombre del dueño debe tener  almenos una letra mayuscula y minuscula</p>
+
+raza
+  </div>
+  <button type="submit" [disabled]="formularioMascota.invalid">Agregar mascota</button>
+</form>
