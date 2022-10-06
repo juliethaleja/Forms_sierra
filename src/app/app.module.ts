@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 
 import { MascotaPrincipalComponent } from './Mascotas/mascota-principal/mascota-principal.component';
 import { MascotaRegistroComponent } from './Mascotas/mascota-registro/mascota-registro.component';
+import { LayoutComponent } from './layout/layout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
 
     MascotaPrincipalComponent,
-    MascotaRegistroComponent
+    MascotaRegistroComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
