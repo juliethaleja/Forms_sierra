@@ -11,16 +11,12 @@ import { LayoutComponent } from './layout/layout.component';
 @NgModule({
   declarations: [
     AppComponent,
-
     MascotaPrincipalComponent,
     MascotaRegistroComponent,
-    LayoutComponent
+    LayoutComponent,
   ],
-  imports: [
-    BrowserModule,
-    ReactiveFormsModule
-  ],
+  imports: [BrowserModule, ReactiveFormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
